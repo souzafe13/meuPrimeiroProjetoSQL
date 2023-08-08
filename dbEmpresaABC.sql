@@ -95,3 +95,36 @@ select * from tbprodutos;
 
 select * from tbprodutos where nome like'mo%' and tipo like '%ma%';
 select * from tbprodutos;
+
+-- order by
+select * from tbprodutos order by nome;
+
+-- order by asc
+select * from tbprodutos order by valor asc;
+
+-- order by desc
+select * from tbprodutos order by valor desc;
+
+-- exemplos com order by (neste exemplo, só acata o primeiro teste = asc)
+select * from tbprodutos order by nome asc, valor desc;
+
+-- não existe TOP no sql, tem que usar o limit
+select * from tbprodutos limit 5;
+
+-- limit order by
+select valor  from tbprodutos order by valor desc limit 5;
+
+
+-- 1. Escreva uma consulta que exiba os dados da tabela PRODUTOS na forma crescente 
+--pelo campo NOME. 
+select * from tbprodutos order by nome asc;
+
+-- 2. Escreva uma consulta que exiba o NOME dos produtos ordenado de forma decrescente 
+-- e o VALOR de forma crescente.
+select * from tbprodutos order by nome desc, valor asc;
+
+-- 3. Escreva uma consulta que exiba os três produtos mais caros
+select valor  from tbprodutos order by valor desc limit 3;
+
+-- 4. Escreva uma consulta que exiba o VALOR do produto mais barato. 
+select valor  from tbprodutos order by valor asc limit 1;
