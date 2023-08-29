@@ -240,4 +240,25 @@ select * from tbEscreve;
 select * from tbLivro;
 select * from tbGenero;	
 
+delete from tbItens_da_venda where idVenda = 406;
+select * from tbItens_da_venda order by idVenda asc;
+
+ 
+
+delete from tbEscreve where idLivro = 508;
+select * from tbEscreve order by idAutor desc;
+
+ 
+
+delete from tbVenda where idCliente = 309;
+select * from tbVenda order by idCliente;
+
+ 
+
+delete from tbAutor where idAutor = 609;
+select * from tbAutor order by idAutor asc;
+
+ 
+
+
 

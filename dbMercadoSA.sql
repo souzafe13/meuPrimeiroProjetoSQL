@@ -120,3 +120,13 @@ select cli.nome, prod.descricao, vend.dataVenda, forn.nome from tbFornecedores a
 -- perguntando pra tabela de funcionarios: nome do funcionário, nome do usuário, data da venda, valor total, nome do produto, data da entrada, nome de fornecedor, cnpj do fornecedor
 
 select func.nome as 'Nome do Funcionário', user.nome as 'Usuário',  vend.dataVenda as 'Data da Venda', vend.valorTotal as 'Valor Total da Venda', prod.descricao as 'Descrição do Produto',prod.dataEntrada as 'Data de Entrada', forn.nome as 'Nome de Fornecedor', forn.cnpj as 'CNPJ do Fornecedor' from tbFornecedores as forn inner join tbProdutos as prod on  forn.codForn = prod.codForn inner join tbVendas as vend on prod.codProduto = vend.codProduto inner join tbUsuarios as user on user.codUser = vend.codUser inner join tbFuncionarios as func on func.codFunc = user.codFunc;
+
+-- perguntar para tbfuncionarios quais os produtos cadastrados e quantidade
+
+-- left join 
+
+select prod.descricao as 'Descrição dos produtos de verdura', prod.quantidade as 'quantidade de frutas do mercadinho' from tbFuncionarios as func left join tbProdutos as prod on func.codFunc = prod.codProduto;
+
+-- right join 
+
+select prod.descricao, prod.quantidade from tbFuncionarios as func right join tbProdutos as prod on func.codFunc = prod.codProduto;
