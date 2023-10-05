@@ -277,13 +277,13 @@ select cli.nome_cli as 'Nome do cliente', tit.nome_cd as 'Títulos dos CDs', ped
 
 -- 5. Selecione o nome do funcionário, número, data e valor dos pedidos que este funcionário registrou, além do nome do cliente que está fazendo o pedido.
 
-select func.nomeFunc as 'Nome do funcionário', ped.numPed as 'Número do pedido', ped.dataPed as 'Data do pedido', ped.valPed as 'Valor do pedido', cli.nomeCli as 'Nome do cliente' from tbClientes as cli right join tbPedidos as ped on cli.codCli = ped.codCli right join tbFuncionarios as func on func.codFunc = ped.codFunc;
+select func.nome_func as 'Nome do funcionário', ped.num_ped as 'Número do pedido', ped.data_ped as 'Data do pedido', ped.val_ped as 'Valor do pedido', cli.nome_cli as 'Nome do cliente' from Clientes as cli right join Pedidos as ped on cli.cod_cli = ped.cod_cli right join Funcionarios as func on func.cod_func = ped.cod_func;
 
  
 
 -- 6.Selecione o nome dos funcionários e o nome de todos os dependentes de cada funcionário.
 
-select func.nomeFunc as 'Nome do funcionário', dep.nomeDep as 'Nome dos dependentes' from tbDependentes as dep right join tbFuncionarios as func on dep.codFunc = func.codFunc;
+select func.nome_func as 'Nome do funcionário', dep.nome_dep as 'Nome dos dependentes' from Dependentes as dep right join Funcionarios as func on dep.cod_func = func.cod_func;
 
  
 
