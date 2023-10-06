@@ -16,6 +16,23 @@ cidade varchar (100),
 primary key (codFunc)
 );	
 
+-- criando tabela de usuário
+
+create table tbUsuarios(
+codUsu int not null auto_increment,
+usuario varchar (30) not null,
+senha varchar(10) not null,
+codFunc int not null, 
+primary key (codUsu),
+foreign key (codFunc) references tbFuncionarios(codFunc)
+);
+
+-- verificar se o usuário existe
+select * from tbUsuarios where usuario = 'admin' and senha = 'admin';
+
+-- inserindo um usuário admin
+insert into tbUsuarios(usuario, senha, codFunc) values ('admin', 'admin', 1);
+
 -- insert into tbFuncionarios(nome, email, cpf, dNasc, endereco, cep, numero, bairro, estado, cidade) values ();
 
 -- Busca por código
