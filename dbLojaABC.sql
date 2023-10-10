@@ -53,3 +53,6 @@ update tbFuncionarios set nome = @nome, email = @email, cpf = @cpf, dNasc = @dNa
 
 -- excluindo funcionários
 delete from tbFuncionarios where codFunc = @codFunc;
+
+-- buscar funcionário que não é usuário
+select usu.usuario, usu.senha, func.codFunc from tbFuncionarios as func inner join tbUsuarios as usu on func.codFunc = usu.codFunc where func.nome = 'José Antonio Miranda da Silva Santos';
